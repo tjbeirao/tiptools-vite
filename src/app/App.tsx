@@ -18,13 +18,13 @@ const { Header, Content, Footer: AntFooter } = Layout;
 const App = () => {
   return (
     <Layout className="App">
-      <Header>
+      <Header style={{ display: 'flex', justifyContent: 'space-between', backgroundColor: '#fffaf2' }}>
         <NavBar />
       </Header>
       <Content style={{ marginTop: '20px', padding: '0 50px' }}>
         <Space direction="vertical" size="large" style={{ width: '100%' }}>
           <Routes>
-            <Route path="/" element={<HomePageContainer />} />
+            <Route path="home" element={<HomePageContainer />} />
             <Route path="about" element={<AboutContainer />} />
             <Route path="program" element={<ProgramContainer />} />
             <Route path="contact" element={<ContactContainer />} />

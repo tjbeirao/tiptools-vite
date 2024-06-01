@@ -1,33 +1,26 @@
-.navbar {
-  background-color: #fffaf2;
+.custom-nav {
+  width: 100%;
 
-  #navbar-container {
-    border-bottom: 3px solid #000;
+  .ant-menu {
+    background-color: cornsilk;
   }
-
-  .nav-link {
-    color: #000;
-    font-family: Montserrat,sans-serif !important;
-    font-weight: 700;
-    z-index: 1002;
-
-    &:hover {
-      cursor: pointer;
-      text-decoration: none;
-      color: #45a1d1;
-    }
-
-    &.active {
-      transition: all .8s ease;
-      background-color: #45a1d1;
-    }
-  }
-
+  
   .logo {
-    width: 270px;
-    height: 80px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    height: 64px;
+    transition: transform 0.3s;
+  }
+
+  .logo-link {
+    display: flex;
+    align-items: center;
+  }
+
+  .ant-menu-item {
+    font-size: 16px;
+  }
+
+  .ant-menu-item-selected {
+    font-weight: bold;
+    color: #1890ff;
   }
 }

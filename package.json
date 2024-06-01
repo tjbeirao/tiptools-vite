@@ -36,6 +36,7 @@
     "workbox-streams": "^6.5.4"
   },
   "devDependencies": {
+    "@ant-design/icons": "^5.3.7",
     "@babel/core": "^7.24.4",
     "@headlessui/react": "^1.7.12",
     "@heroicons/react": "^2.0.16",
