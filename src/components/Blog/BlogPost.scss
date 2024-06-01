@@ -1,0 +1,17 @@
+.blog_post {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .post_content {
+        p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .blog_picture {
+        height: 100%;
+    }
+}

@@ -1,0 +1,27 @@
+.review-session {
+  .border {
+    border: none !important;
+    box-shadow: 0 0 15px hsla(37, 39%, 62%, 0.702) !important;
+    width: 100%;
+  }
+
+  .rounded-bottom, .rounded-start {
+    border-bottom-left-radius: 0.375rem !important;
+  }
+
+  .rounded-bottom, .rounded-end {
+    border-bottom-right-radius: 0.375rem !important;
+  }
+
+  .bg-green {
+    background-color: #009e68;
+  }
+
+  .bg-purple {
+    background-color: #8c377d;
+  }
+
+  .bg-blue {
+    background-color: #0f67a9;
+  }
+}

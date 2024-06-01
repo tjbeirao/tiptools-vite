@@ -1,0 +1,44 @@
+#mission {
+  margin-bottom: 3rem !important;
+
+  .card-title {
+    font-family: Montserrat,sans-serif;
+    margin-bottom: .75rem;
+    font-size: calc(1.475rem + 1.2vw);
+  }
+
+  .title-1 {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("./blue.png");
+  }
+
+  .title-2 {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("./orange.png");
+  }
+
+  .title-3 {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("./yellow.png");
+    text-align: left !important;
+
+    @media screen and (min-width: 768px) {
+      text-align: center !important;
+      background-position-x: center;
+    }
+  }
+
+  .values-body {
+    @media screen and (min-width: 1200px) {
+      padding-left: 180px;
+      padding-right: 180px;
+    }
+  }
+
+  .card-text {
+    font-size: 1.2rem;
+  }
+}
