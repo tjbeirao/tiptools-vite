@@ -24,7 +24,7 @@ const App = () => {
       <Content style={{ marginTop: '20px', padding: '0 50px' }}>
         <Space direction="vertical" size="large" style={{ width: '100%' }}>
           <Routes>
-            <Route path="home" element={<HomePageContainer />} />
+            <Route path="/" element={<HomePageContainer />} />
             <Route path="about" element={<AboutContainer />} />
             <Route path="program" element={<ProgramContainer />} />
             <Route path="contact" element={<ContactContainer />} />

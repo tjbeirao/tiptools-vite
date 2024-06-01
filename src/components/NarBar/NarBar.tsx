@@ -6,7 +6,7 @@ import './NavBar.scss';
 export const NavBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const selectedKeys = [location.pathname.substring(1)];
+  const selectedKeys = [location.pathname === '/' ? 'home' : location.pathname.substring(1)];
 
   const handleNavigation = (path: string) => {
     navigate(path);
@@ -14,10 +14,10 @@ export const NavBar = () => {
 
   return (
     <Menu mode="horizontal" selectedKeys={selectedKeys} className="custom-nav">
-      <Menu.Item key="logo" onClick={() => handleNavigation('/home')}>
+      <Menu.Item key="logo" onClick={() => handleNavigation('/')}>
         <img className="logo" src="logo/logo_horizontal_transparent.png" alt="logo" />
       </Menu.Item>
-      <Menu.Item key="home" onClick={() => handleNavigation('/home')}>
+      <Menu.Item key="home" onClick={() => handleNavigation('/')}>
         Home
       </Menu.Item>
       <Menu.Item key="about" onClick={() => handleNavigation('/about')}>
