@@ -1,45 +1,49 @@
 import React from "react";
+import { Row, Col, Table, Typography } from 'antd';
 import "./AboutEducator.scss";
-
 import { educators } from "../../data/educators";
-import { Table } from "react-bootstrap";
+
+const { Title, Paragraph } = Typography;
 
 export const AboutEducator = () => {
+  const columns = [
+    {
+      title: '#',
+      dataIndex: 'index',
+      key: 'index',
+      render: (text, record, index) => index + 1,
+    },
+    {
+      title: 'Title',
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
+      title: 'Year',
+      dataIndex: 'year',
+      key: 'year',
+    },
+  ];
+
   return (
     <section className="about-educators">
       <div className="container">
-        <h2 className="h2 mb-3">Educator</h2>
+        <Title level={2} className="mb-3">Educator</Title>
         {educators.map((educator) => {
           return (
-            <div key={educator.id} className="row align-items-center">
-              <div className="col-md-12 col-lg-12 my-3">
-                <p className="mb-3 fs-24">{educator.description}</p>
-              </div>
+            <Row key={educator.id} align="middle" className="mb-3">
+              <Col span={24} className="my-3">
+                <Paragraph className="fs-24">{educator.description}</Paragraph>
+              </Col>
 
-              <div className="educator_workshops col-md-12 col-lg-12 my-3">
-                <h3 className="h3 my-3">Qualifications and Training</h3>
-                <Table striped hover>
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Title</th>
-                      <th>Year</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {educator.workshops.map((workshop, index) => {
-                      return (
-                        <tr key={workshop.month + index}>
-                          <td>{index + 1}</td>
-                          <td>{workshop.name}</td>
-                          <td>{workshop.year}</td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </Table>
-              </div>
-            </div>
+              <Col span={24} className="educator_workshops my-3">
+                <Title level={3} className="my-3">Qualifications and Training</Title>
+                <Table columns={columns} dataSource={educator.workshops.map((workshop, index) => ({
+                  ...workshop,
+                  key: index,
+                }))} pagination={false} striped hoverable />
+              </Col>
+            </Row>
           );
         })}
       </div>

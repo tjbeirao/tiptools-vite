@@ -1,57 +1,58 @@
 import React from "react";
-import "./Footer.scss";
+import { Row, Col, Typography, Layout } from 'antd';
 import { NavLink } from "react-router-dom";
 import { IconWrapper } from "../Icons/IconWrapper";
+import "./Footer.scss";
+
+const { Title, Text } = Typography;
+const { Footer: AntFooter } = Layout;
 
 export const Footer = () => {
   return (
-    <footer className="page-footer container pt-5 mt-5">
+    <AntFooter className="page-footer">
       <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-md-9 text-center">
-            <h3 className="footer-site-logo mb-4">
+        <Row justify="center" className="pt-5 mt-5">
+          <Col md={9} className="text-center">
+            <Title level={3} className="footer-site-logo mb-4">
               TipTools Childcare
-            </h3>
+            </Title>
             <ul className="list-unstyled nav-links mb-5">
               <li>
-                <NavLink style={{ textDecoration: 'none' }} className="nav-item nav-link" to="/about">
+                <NavLink to="/about" style={{ textDecoration: 'none' }}>
                   About us
                 </NavLink>
               </li>
-              {/* <li>
-                <NavLink style={{ textDecoration: 'none' }} className="nav-item nav-link" to="/program">
+              {/* Uncomment the following links as needed
+              <li>
+                <NavLink to="/program" style={{ textDecoration: 'none' }}>
                   Our Program
                 </NavLink>
               </li>
               <li>
-                <NavLink style={{ textDecoration: 'none' }} className="nav-item nav-link" to="/contact">
+                <NavLink to="/contact" style={{ textDecoration: 'none' }}>
                   Contact us
                 </NavLink>
-              </li> */}
+              </li>
+              */}
             </ul>
-            <div className="container social mb-4">
-              <h3>Stay in touch</h3>
-              <div className="row justify-content-center">
-                <div className="col col-auto">
-                  <a href="https://www.instagram.com/tiptoolschildcare/" target="_blank" rel="noreferrer">
-                    <IconWrapper className="in" icon="instagram" size={24} />
-                  </a>
-                </div>
-                <div className="col col-auto">
-                  <a href="https://www.facebook.com/tiptoolschildcare/" target="_blank" rel="noreferrer">
-                    <IconWrapper className="fb" icon="facebook-official" size={24} />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="copyright">
-              <p className="mb-0">
-                <small>© TipTools 2023. All Rights Reserved.</small>
-              </p>
-            </div>
-          </div>
-        </div>
+            <Row justify="center" className="social mb-4">
+              <Col>
+                <a href="https://www.instagram.com/tiptoolschildcare/" target="_blank" rel="noreferrer">
+                  <IconWrapper icon="instagram" size={24} />
+                </a>
+              </Col>
+              <Col>
+                <a href="https://www.facebook.com/tiptoolschildcare/" target="_blank" rel="noreferrer">
+                  <IconWrapper icon="facebook-official" size={24} />
+                </a>
+              </Col>
+            </Row>
+            <Text className="copyright">
+              © TipTools 2023. All Rights Reserved.
+            </Text>
+          </Col>
+        </Row>
       </div>
-    </footer>
+    </AntFooter>
   );
 };

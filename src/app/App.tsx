@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Routes } from "react-router-dom";
+import { Layout, Space } from 'antd';
 
 import { AboutContainer } from '../components/About/AboutContainer';
 import { ContactContainer } from '../components/Contact/ContactContainer';
@@ -12,25 +13,31 @@ import { BlogPost } from '../components/Blog/BlogPost';
 
 import './App.scss';
 
-function App() {
+const { Header, Content, Footer: AntFooter } = Layout;
+
+const App = () => {
   return (
-    <div className="App">
-      <NavBar />
-      <div className="App-body mt-5">
-        <Routes>
-          <Route path="/" element={<HomePageContainer />}/>
-          <Route path="about" element={<AboutContainer />}/>
-          <Route path="program" element={<ProgramContainer />}/>
-          <Route path="contact" element={<ContactContainer />}/>
-          <Route path="blog" element={<BlogContainer />}/>
-          <Route path="blog/:id" element={<BlogPost />}/>
-        </Routes>
-      </div>
-      <div className="App-footer">
+    <Layout className="App">
+      <Header>
+        <NavBar />
+      </Header>
+      <Content style={{ marginTop: '20px', padding: '0 50px' }}>
+        <Space direction="vertical" size="large" style={{ width: '100%' }}>
+          <Routes>
+            <Route path="/" element={<HomePageContainer />} />
+            <Route path="about" element={<AboutContainer />} />
+            <Route path="program" element={<ProgramContainer />} />
+            <Route path="contact" element={<ContactContainer />} />
+            <Route path="blog" element={<BlogContainer />} />
+            <Route path="blog/:id" element={<BlogPost />} />
+          </Routes>
+        </Space>
+      </Content>
+      <AntFooter style={{ textAlign: 'center' }}>
         <Footer />
-      </div>
-    </div>
+      </AntFooter>
+    </Layout>
   );
 }
 
-export default App;
+export { App };

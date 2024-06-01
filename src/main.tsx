@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './app/App';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from "react-router-dom";
+import { App } from './app';
+
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 import './index.scss';
 import './styles/scss/style.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

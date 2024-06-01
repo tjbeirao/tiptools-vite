@@ -1,23 +1,19 @@
-import React from 'react'
-import './HomePageContainer.scss'
-import { MainBanner } from './MainBanner'
-import { Mission } from './Mission'
-import { ContactContainer } from '../Contact/ContactContainer'
+import React from 'react';
+import { Space } from 'antd';
+import './HomePageContainer.scss';
+import { MainBanner } from './MainBanner';
+import { Mission } from './Mission';
+import { ContactContainer } from '../Contact/ContactContainer';
 
 export const HomePageContainer = () => {
-
   return (
-    <>
-      <div className="mb-5">
-        <MainBanner />
-      </div>
-      <div className="mb-5">
-        <Mission />
-      </div>
-      {/* <div className="mb-5">
-        <Review />
-      </div> */}
+    <Space direction="vertical" size="large" style={{ width: '100%' }}>
+      <MainBanner />
+      <Mission />
+      {/* Uncomment and add the Review component if needed
+      <Review />
+      */}
       <ContactContainer />
-    </>
-  )
-}
+    </Space>
+  );
+};
